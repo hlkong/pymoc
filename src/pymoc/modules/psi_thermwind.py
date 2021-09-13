@@ -134,7 +134,7 @@ class Psi_Thermwind(object):
     # interpolate solution for overturning circulation onto original grid (and change units to SV)
     self.Psi = res.sol(self.z)[0, :] / 1e6
 
-  def Psib(self, nb=500):
+  def Psib(self, nb=501):
     r"""
     Remap the overturning streamfunction from physical depth space, into isopycnal
     space
@@ -184,7 +184,7 @@ class Psi_Thermwind(object):
       psib[i] = np.sum(mask * udydz)
     return psib
 
-  def Psibz(self, nb=500):
+  def Psibz(self, nb=501):
     r"""
     Remap the overturning streamfunction onto the native isopycnal-depth space
     of the columns in the northern region and southern basin.
